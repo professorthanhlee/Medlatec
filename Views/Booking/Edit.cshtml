@@ -1,0 +1,11 @@
+﻿@model Medlatec.Models.Appointment
+
+<h1>Edit Appointment</h1>
+<form asp-action="Edit" method="post">
+    <input asp-for="Id" type="hidden" />
+    <label>Doctor Name:</label>
+    <input asp-for="DoctorName" required /><br />
+    <label>Appointment Date:</label>
+    <input asp-for="AppointmentDate" type="datetime-local" required /><br />
+    <button type="submit">Update</button>
+</form>

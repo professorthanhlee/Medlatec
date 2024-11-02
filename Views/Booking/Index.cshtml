@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Medlatec.Models.Appointment>
+
+<h1>Appointment List</h1>
+<table>
+    <tr>
+        <th>Doctor Name</th>
+        <th>Appointment Date</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var appointment in Model)
+    {
+        <tr>
+            <td>@appointment.DoctorName</td>
+            <td>@appointment.AppointmentDate</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@appointment.Id">Edit</a>
+                <a asp-action="Delete" asp-route-id="@appointment.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a asp-action="Create">Create New Appointment</a>
